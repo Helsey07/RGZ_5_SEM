@@ -1,0 +1,235 @@
+body {
+    margin: 0;
+    overflow-x: hidden;
+    background: linear-gradient(to right, #87CEFA, #4682B4);
+    font-family: 'Roboto', sans-serif;
+  }
+
+main {
+    margin-bottom: 40px;
+    padding: 10px;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Стили для заголовка */
+header {
+    background-color: #BA55D3;
+    padding: 20px;
+    color: white;
+    text-align: center;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Анимация при наведении */
+header:hover {
+    background-color: #9400D3;
+}
+
+footer {
+    font-size: 14pt;
+    color: black;
+    font-weight: bold;
+    margin-top: 40px;
+    padding: 10px;
+    background-color: #BA55D3;
+    text-align: right;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-family: 'Roboto', sans-serif;
+    transition: background-color 0.3s ease;
+}
+
+footer:hover {
+    background-color: #9400D3;
+}
+.error {
+    color: red;
+    background-color: black;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+.ramka {
+    margin-left: 32%;
+    border: solid;
+    border-color: blueviolet;
+    border-radius: 50px;
+    width: 500px;
+}
+
+
+.pole_tiket {
+    color: black;
+    margin: 20px;
+    font-weight: bold;
+}
+a {
+    text-decoration: none;
+}
+
+a:active {
+    color: blue;
+}
+.pole_but{
+    font-weight: bold;
+    text-align: center;
+    margin: 20px;
+}
+.pay_but {
+    border-radius: 50px;
+    background-color: blueviolet;
+    color: white;
+    height: 20px;
+    width: 40px;
+    font-weight: bold;
+    padding: 15px;
+    box-shadow: 0 9px 18px rgba(0,0,0,0.2)
+}
+
+.oplata {
+    padding: 10px;
+    width:  auto;
+    color: white;
+    background-color: blueviolet;
+    border-radius: 50px;
+    height: auto;
+    font-size: 20px;
+    text-align: center;
+
+}
+
+
+.glav_verh {
+    display: flex;
+}
+
+.glav_verh_2{
+    border-radius: 10px;
+    border: 1px solid rgb(255, 255, 255);
+    padding: 20px;
+    color: white;
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+
+.zam1 {
+    display: inline;
+    color: rgb(75, 75, 251);
+    margin-left: 25%;
+    height: 30px;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+.zam2 {
+    display: inline;
+    color: rgb(75, 75, 251);
+    margin-left: 5%;
+    height: 30px;
+    margin-right: 18%;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+.oform_zam{
+    text-align: center;
+    margin-top: 50px;
+}
+
+table {
+    width: 100%; /* Ширина таблицы занимает 100% ширины контейнера */
+    border-collapse: collapse; /* Объединение границ ячеек таблицы */
+  }
+
+  th, td {
+    border: 1px solid #dddddd; /* Границы ячеек и заголовков таблицы */
+    text-align: left; /* Выравнивание текста в ячейках */
+    padding: 8px; /* Внутренний отступ в ячейках */
+    width: 100px; /* Фиксированная ширина ячеек */
+  }
+
+  img {
+    max-width: 100px; /* Максимальная ширина изображения */
+    max-height: 100px; /* Максимальная высота изображения */
+  }
+
+
+
+  h1{
+    font-size: 30px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  table{
+    width:100%;
+    table-layout: fixed;
+  }
+  .tbl-header{
+    background-color: rgba(255,255,255,0.3);
+   }
+  .tbl-content{
+    height:300px;
+    overflow-x:auto;
+    margin-top: 0px;
+    border: 1px solid rgba(255,255,255,0.3);
+  }
+  th{
+    padding: 20px 15px;
+    text-align: left;
+    font-weight: 500;
+    font-size: 12px;
+    color: #fff;
+    text-transform: uppercase;
+  }
+  td{
+    padding: 15px;
+    text-align: left;
+    vertical-align:middle;
+    font-weight: 300;
+    font-size: 12px;
+    color: #fff;
+    border-bottom: solid 1px rgba(255,255,255,0.1);
+  }
+
+button {
+    padding: 10px 20px;
+    background-color: #BA55D3;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 10px
+}
+  
+button:hover {
+    background-color:#9400D3;
+}
+
+
+form {
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  label {
+    color: #ffffff;
+  }
+  
+  input[type="text"],
+  input[type="password"],
+  input[type="number"] {
+    padding: 15px;
+    border: 1px solid #8a2be2;
+    border-radius: 5px;
+    margin: 10px;
+  }
+  

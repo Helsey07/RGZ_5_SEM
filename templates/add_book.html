@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block main %}
+  <h1>Добавление книги</h1>
+  
+  <form action="{{ url_for('rgz.add_book') }}" method="POST" enctype="multipart/form-data">
+    <div>
+        <label for="title" style="margin-right: 73px;">Название:</label>
+        <input type="text" id="title" name="title" required>
+    </div>
+
+    <div>
+        <label for="author" style="margin-right: 108px;">Автор</label>
+        <input type="text" id="author" name="author" required>
+    </div>
+
+    <div>
+        <label for="pages">Количество страниц</label>
+        <input type="number" id="pages" name="pages" required>
+    </div>
+
+    <div>
+        <label for="publisher" style="margin-right: 53px;">Издательство</label>
+        <input type="text" id="publisher" name="publisher" required>
+    </div>
+
+    <div>
+        <label for="cover_image">URL обложки</label>
+        <input type="file" id="cover_image" name="cover_image">
+    </div>
+
+    <div>
+        <button type="submit">Добавить книгу</button>
+    </div>
+</form>
+
+  <a href="{{ url_for('rgz.index') }}">Обратно к списку</a>
+{% endblock %}

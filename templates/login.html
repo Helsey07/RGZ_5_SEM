@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block lab %} РГЗ, Авторизация для менеджера {% endblock %}
+
+{% block main %}
+
+    <h2 style="text-align: center; color: white;">Пожалуйста, авторизуйтесь</h2>
+    <div style="color: rgb(96, 30, 30); text-align: center;">
+        {% for error in errors %}
+            {{ error }}
+        {% endfor %}
+    </div>
+    <form method="post">
+        <div>
+            <label for="username">Пользователь</label>
+            <input type="text" id="username" name="username" value="{{ username or '' }}">
+        </div>
+        <div>
+            <label style="margin-right: 50px;" for="password">Пароль</label>
+            <input type="password" id="password" name="password" value="{{ password or '' }}">
+        </div>
+        <div>
+            <button type="submit">Войти</button>
+            <button type="reset">Отмена</button>
+        </div>
+    </form>
+{% endblock %}

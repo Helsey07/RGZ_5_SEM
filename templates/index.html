@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<div class="glav_verh">
+    <form action="/rgz/login">
+        <button class="b1" type="submit">Логин</button>
+    </form>
+
+    {% if is_authenticated %}
+        <form action="{{ url_for('rgz.logout') }}" method="POST">
+            <button class="b1" style="margin-left: 40px;" type="submit">Выйти</button>
+        </form>
+        <a href="{{ url_for('rgz.add_book') }}" style=" margin-left: 50px; padding-top: 18px;">Добавить книгу</a>
+    {% endif %}
+
+    <div style="margin-left: 65%;">
+        {% if current_user.is_authenticated %}
+        {{ current_user.username }}
+        {% else %}
+        Привет, посетитель!
+        {% endif %}
+    </div>
+</div>
+
+  <div class="glav_verh_2">
+    <h1>Список книг</h1>
+    <form action="{{ url_for('rgz.index') }}" method="get">
+      <label for="title">Название:</label>
+      <input type="text" name="title" value="{{ title_filter }}">
+      
+      <label for="author">Автор:</label>
+      <input type="text" name="author" value="{{ author_filter }}">
+      
+      <label for="pages">Количество страниц:</label>
+      <input type="text" name="pages" value="{{ pages_filter }}">
+      
+      <label for="publisher">Издательство:</label>
+      <input type="text" name="publisher" value="{{ publisher_filter }}"><br />
+      
+      <button type="submit">Применить фильтр</button>
+    </div>
+  </form>
+    <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Название</th>
+            <th>Автор</th>
+            <th>Количество страниц</th>
+            <th>Издательство</th>
+            <th>Обложка</th>
+            {% if is_authenticated %}
+              <th>Действия</th>
+            {% endif %}
+          </tr>
+        </thead>
+        <tbody>
+          {% for book in books.items %}
+            <tr>
+              <td>{{ book.id }}</td>
+              <td>{{ book.title }}</td>
+              <td>{{ book.author }}</td>
+              <td>{{ book.pages }}</td>
+              <td>{{ book.publisher }}</td>
+              <td><img src="{{ url_for('static', filename='kartinki/' + book.cover_image_url) }}" alt="Book Cover"></td>
+              {% if is_authenticated %}
+                <td>
+                  <form action="{{ url_for('rgz.delete_book', book_id=book.id) }}" method="post">
+                    <button type="submit">Удалить</button>
+                  </form>
+                </td>
+              {% endif %}
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    
+      {% if books.has_prev %}
+        <a href="{{ url_for('rgz.index', page=books.prev_num, sort=sort_field, direction=sort_direction) }}">Предыдущие</a>
+      {% endif %}
+      
+      {% if books.has_next %}
+        <a href="{{ url_for('rgz.index', page=books.next_num, sort=sort_field, direction=sort_direction) }}">Следующие</a>
+      {% endif %}
+{% endblock %}
